@@ -1,0 +1,9 @@
+# Web server
+flask
+flask_sqlalchemy
+gunicorn
+# Spider
+arrow
+bs4
+requests
+pixivpy
