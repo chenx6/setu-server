@@ -1,4 +1,6 @@
-# 色图 API (WIP)
+# 自助色图 API (WIP)
+
+无人工干预，自动从各种渠道获取色图，并通过 API 等方式进行色图的重新分发
 
 # 功能
 
@@ -7,7 +9,7 @@
 |路由|参数|功能|
 |-|-|-|
 |`/stage1st`||显示 S1 用户欧金金发的色图|
-|`/nga`||显示 NGA 用户|
+|`/nga`||显示 NGA 用户 wkq1w2e3 发的色图|
 
 ## 搜索色图
 
@@ -34,7 +36,7 @@
 # 创建虚拟环境
 python3 -m venv venv
 source venv/bin/activate
-python3 -m pip install -r requirements
+python3 -m pip install -r requirements.txt
 # 使用 gunicorn 运行
 gunicorn -w $(nproc) -b 0.0.0.0:8848 'setu_viewer:create_app()'
 ```
