@@ -10,6 +10,7 @@
 |-|-|-|
 |`/stage1st`||显示 S1 用户欧金金发的色图|
 |`/nga`||显示 NGA 用户 wkq1w2e3 发的色图|
+|`/adnmb`||显示 ADNMB 中 JP 图片|
 
 ## 搜索色图
 
@@ -23,6 +24,7 @@
 |-|-|-|
 |`/api/v1/stage1st`||带 URL 的 JSON|
 |`/api/v1/nga`||带 URL 的 JSON|
+|`/api/v1/adnmb`||带 URL 的 JSON|
 |`/api/v1/pixiv/popular`|word|API 返回结果|
 
 # 架构

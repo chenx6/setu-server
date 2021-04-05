@@ -7,6 +7,7 @@ from .base import db
 class PictureSource(Enum):
     NGA = 1
     Stage1st = 2
+    ADNMB = 3
 
 
 class PictureUrl(db.Model):

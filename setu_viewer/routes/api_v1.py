@@ -27,3 +27,9 @@ def popular_prev():
 def s1_random_picture():
     """S1 随机色图接口"""
     return {"url": random_img(PictureSource.Stage1st)}
+
+
+@api_bp.route("/adnmb", methods=["GET"])
+def adnmb_random_picture():
+    """ADNMB 随机色图接口"""
+    return {"url": random_img(PictureSource.ADNMB)}
