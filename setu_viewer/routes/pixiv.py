@@ -17,5 +17,10 @@ def popular_rank():
     # URL 替换为 pixiv.cat 的链接，绕过 P 站限制
     urls = []
     for i in result['illusts'][:3]:
-        urls.append(f"https://pixiv.cat/{i['id']}.jpg")
+        # 多于 1 页的图
+        if i['page_count'] != 1:
+            urls += [f"https://pixiv.cat/{i['id']}-{j}.jpg"
+                     for j in range(1, i['page_count']+1)]
+        else:
+            urls.append(f"https://pixiv.cat/{i['id']}.jpg")
     return render_template("show_pixiv_popular.html", word=word, urls=urls)
