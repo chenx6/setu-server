@@ -1,10 +1,12 @@
 from typing import Any
 from pixivpy3 import ByPassSniApi
 
+from setu_viewer.config import Config
+
 api = ByPassSniApi()
 # api.require_appapi_hosts(hostname="public-api.secure.pixiv.net")
-api.hosts = "https://210.140.131.201"  # TODO: CF DOH is broken, manual set hosts
-api.auth(refresh_token='uXooTT7xz9v4mflnZqJUO7po9W5ciouhKrIDnI2Dv3c')
+api.hosts = Config.PIXIV_HOST  # TODO: CF DOH is broken, manual set hosts
+api.auth(refresh_token=Config.PIXIV_REFRESH_KEY)
 
 
 def popular_preview(word: str) -> Any:
