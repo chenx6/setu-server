@@ -13,9 +13,14 @@ def popular_rank():
         return render_template("error.html", message="缺少 word 参数")
     result = popular_preview(word)
     if "error" in result.keys():
-        return render_template("error.html", message="word 参数错误," + result["error"])
+        return render_template("error.html", message="word 参数错误," + result["error"]["user_message"])
     # URL 替换为 pixiv.cat 的链接，绕过 P 站限制
     urls = []
     for i in result['illusts'][:3]:
-        urls.append(f"https://pixiv.cat/{i['id']}.jpg")
+        # 多于 1 页的图
+        if i['page_count'] != 1:
+            urls += [f"https://pixiv.cat/{i['id']}-{j}.jpg"
+                     for j in range(1, i['page_count']+1)]
+        else:
+            urls.append(f"https://pixiv.cat/{i['id']}.jpg")
     return render_template("show_pixiv_popular.html", word=word, urls=urls)
