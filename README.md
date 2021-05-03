@@ -39,6 +39,7 @@
 python3 -m venv venv
 source venv/bin/activate
 python3 -m pip install -r requirements.txt
+# 请先修改 `setu_viewer/config.py` 配置文件，添加 PIXIV_REFRESH_KEY (P 站刷新密钥) 和 PIXIV_HOST (P 站的真实 IP)
 # 使用 gunicorn 运行
 gunicorn -w $(nproc) -b 0.0.0.0:8848 'setu_viewer:create_app()'
 ```
