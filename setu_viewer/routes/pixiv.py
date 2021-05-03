@@ -13,7 +13,7 @@ def popular_rank():
         return render_template("error.html", message="缺少 word 参数")
     result = popular_preview(word)
     if "error" in result.keys():
-        return render_template("error.html", message="word 参数错误," + result["error"])
+        return render_template("error.html", message="word 参数错误," + result["error"]["user_message"])
     # URL 替换为 pixiv.cat 的链接，绕过 P 站限制
     urls = []
     for i in result['illusts'][:3]:
